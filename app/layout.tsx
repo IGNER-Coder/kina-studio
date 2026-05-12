@@ -17,7 +17,8 @@ const outfit = Outfit({
   weight: ["300", "400", "500"],
 });
 
-const DOMAIN = "https://www.kinastudio.co.ke";
+const DOMAIN =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://kina-studio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kina Studio — Web Design & Brand Identity | Nairobi",
     description:
-      "Premium web design and brand identity for African startups and corporates. Nairobi-based, globally capable.",
+      "Premium web design and brand identity for African startups and corporates. Nairobi-based, globally capable. We go deep so you grow high.",
     url: DOMAIN,
     siteName: "Kina Studio",
     images: [
