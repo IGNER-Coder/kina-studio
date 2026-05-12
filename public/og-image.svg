@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="&#39;Playfair Display&#39;, Georgia, serif">
+  <defs>
+    
+  </defs>
+
+  
+  <rect width="1200" height="630" fill="#0D0D0D"></rect>
+
+  
+  <g fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.05">
+    <circle cx="800" cy="315" r="140"></circle>
+    <circle cx="800" cy="315" r="190"></circle>
+    <circle cx="800" cy="315" r="240"></circle>
+    <circle cx="800" cy="315" r="290"></circle>
+    <circle cx="800" cy="315" r="340"></circle>
+  </g>
+
+  
+  <g stroke="#C9A84C" stroke-width="0.3" opacity="0.04">
+    <line x1="800" y1="-45" x2="800" y2="675"></line>
+    <line x1="440" y1="315" x2="1160" y2="315"></line>
+    <line x1="546" y1="61" x2="1054" y2="569"></line>
+    <line x1="1054" y1="61" x2="546" y2="569"></line>
+  </g>
+
+  
+  <line x1="450" y1="80" x2="450" y2="550" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"></line>
+
+  
+  
+  <text x="80" y="240" class="serif" font-size="96" font-weight="600" fill="#C9A84C" letter-spacing="2">KINA</text>
+
+  
+  <line x1="80" y1="262" x2="140" y2="262" stroke="#C9A84C" stroke-width="1"></line>
+
+  
+  <text x="80" y="305" class="serif" font-size="38" font-weight="400" fill="#8B7A4A" letter-spacing="18">STUDIO</text>
+
+  
+  <text x="80" y="385" class="sans" font-size="16" font-weight="400" fill="#A09C94" letter-spacing="3">WEB DESIGN &amp; BRAND IDENTITY</text>
+
+  
+  <text x="80" y="427" class="serif" font-style="italic" font-size="18" fill="#C9A84C" opacity="0.7">Go Deep. Grow High.</text>
+
+  
+  <text x="80" y="580" class="sans" font-size="11" font-weight="500" fill="#8B7A4A" letter-spacing="4">NAIROBI · AFRICA</text>
+
+  
+  
+  <rect x="700" y="215" width="200" height="200" rx="18" ry="18" fill="none" stroke="#C9A84C" stroke-width="1.5"></rect>
+
+  
+  <text x="800" y="350" class="serif" font-size="120" font-weight="500" fill="#C9A84C" text-anchor="middle">K</text>
+
+  
+  
+  <g fill="#C9A84C">
+    
+    <circle cx="745" cy="248" r="3" opacity="1.00"></circle>
+    <circle cx="858" cy="262" r="2" opacity="0.90"></circle>
+    <circle cx="872" cy="358" r="3" opacity="0.78"></circle>
+    <circle cx="758" cy="382" r="2" opacity="0.66"></circle>
+    
+    <circle cx="690" cy="305" r="3" opacity="0.55"></circle>
+    <circle cx="910" cy="298" r="2" opacity="0.46"></circle>
+    <circle cx="828" cy="195" r="3" opacity="0.38"></circle>
+    <circle cx="722" cy="430" r="2" opacity="0.30"></circle>
+    
+    <circle cx="936" cy="402" r="3" opacity="0.24"></circle>
+    <circle cx="665" cy="220" r="2" opacity="0.20"></circle>
+  </g>
+</svg>

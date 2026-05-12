@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+/* ─── TAILWIND v4 THEME ─── */
+@theme {
+  /* Colors */
+  --color-black:        #0A0A0A;
+  --color-surface:      #111111;
+  --color-surface2:     #181818;
+  --color-border:       #1E1E1E;
+  --color-gold:         #C9A84C;
+  --color-gold-dim:     #8B7A4A;
+  --color-parchment:    #F5F0E8;
+  --color-parchment-2:  #EDE8DC;
+  --color-gray:         #A09C94;
+  --color-muted:        #807C74;
+
+  /* Font families */
+  --font-family-serif: var(--font-serif), Georgia, serif;
+  --font-family-sans:  var(--font-sans), system-ui, sans-serif;
+
+  /* Screens */
+  --breakpoint-xs: 480px;
+
+  /* Animations */
+  --animate-floatY: floatY 3s ease-in-out infinite;
+  --animate-fadeUp: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+
+  /* Keyframes */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 2px; }
+
+/* ─── SELECTION ─── */
+::selection { background: rgba(201,168,76,0.25); color: #F5F0E8; }
+
+/* ─── BASE ─── */
+html { scroll-behavior: smooth; }
+body {
+  background: #0A0A0A;
+  color: #F5F0E8;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── DEPTH RINGS ─── */
+.depth-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 0.5px solid #C9A84C;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulseRing 4s ease-in-out infinite;
+}
+
+@keyframes pulseRing {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); }
+  50%       { transform: translate(-50%,-50%) scale(1.04); }
+}
+
+/* ─── FLOAT ─── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+.float-card   { animation: floatY 3s ease-in-out infinite; }
+.float-card-2 { animation: floatY 3s ease-in-out 1.5s infinite; }
+
+/* ─── REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+              transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible        { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── SERVICE ITEM ─── */
+.service-item { position: relative; overflow: hidden; }
+.service-item::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: #C9A84C;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.service-item:hover::before { transform: scaleX(1); }
+.service-line {
+  width: 20px; height: 1.5px;
+  background: #C9A84C; border-radius: 1px;
+  margin-top: 1.5rem;
+  transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.service-item:hover .service-line { width: 44px; }
+
+/* ─── PORTFOLIO ─── */
+.p-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+  transform: translateY(6px);
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.p-item:hover .p-overlay { transform: translateY(0); }
+.p-visual { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.p-item:hover .p-visual { transform: scale(1.03); }
+.p-arrow {
+  opacity: 0; transform: translateY(-4px);
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.p-item:hover .p-arrow { opacity: 1; transform: translateY(0); }
+
+/* ─── NAV LINK ─── */
+.nav-link { position: relative; padding-bottom: 2px; }
+.nav-link::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 100%;
+  height: 0.5px; background: #C9A84C;
+  transition: right 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-link:hover::after { right: 0; }
+.nav-link.nav-active::after { right: 0; }
+
+/* ─── BTN PRIMARY ─── */
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.btn-primary:hover::after { transform: scaleX(1); }
+
+/* ─── CURSOR ─── */
+.custom-cursor {
+  position: fixed; width: 8px; height: 8px;
+  background: #C9A84C; border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  mix-blend-mode: difference;
+}
+.custom-cursor.expand { width: 40px; height: 40px; opacity: 0.4; }
+@media (hover: none) { .custom-cursor { display: none; } }
+
+/* ─── FONT UTILITIES ─── */
+/* Variables are set by next/font on <html> — do not redefine them here */
+.font-serif { font-family: var(--font-serif) !important; }
+.font-sans  { font-family: var(--font-sans) !important; }
+
+/* ─── ABOUT REASON ROWS ─── */
+.about-reason {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem);
+  background: #111111;
+  transition: background 0.3s ease;
+}
+.about-reason:hover { background: #161616; }
+.about-reason-icon {
+  font-size: 1.1rem;
+  color: #C9A84C;
+  min-width: 1.5rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ─── WHATSAPP FLOATING BUBBLE ─── */
+.wa-bubble {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9998;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.3s ease;
+  /* Pulse ring */
+}
+.wa-bubble::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37, 211, 102, 0.4);
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
+.wa-bubble:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
+}
+.wa-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+/* Tooltip */
+.wa-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1A1208;
+  color: #F5F0E8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-50%) translateX(4px);
+}
+.wa-bubble:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+@keyframes wa-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.18); opacity: 0; }
+}
+/* Hide tooltip on touch devices */
+@media (hover: none) {
+  .wa-tooltip { display: none; }
+}
+
+/* fadeIn is used inline in Hero — keep as a regular keyframe */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── TIMELINE (removed — Process section now uses numbered editorial layout) ─── */
